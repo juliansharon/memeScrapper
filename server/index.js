@@ -22,6 +22,7 @@ app.get("/meme", (req, res) => {
     gzip: true,
   })
     .then((html) => {
+      res.send(html);
       data = html;
       $ = cheerio.load(html);
       const allChildren = $("img");
@@ -30,7 +31,7 @@ app.get("/meme", (req, res) => {
         console.log($(image).attr("src"));
         resImageList.push($(image).attr("src"));
       });
-      res.send(resImageList);
+      //res.send(resImageList);
     })
     .catch((err) => console.log("errrrrr" + err));
 });
