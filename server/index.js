@@ -1,12 +1,9 @@
 const express = require("express");
 const cheerio = require("cheerio");
-const axios = require("axios");
-const fs = require("fs");
 const bodyParser = require("body-parser");
 const app = express();
 const request = require("request-promise");
-const { html } = require("cheerio");
-app.listen(process.env.port || 3000, () => {
+app.listen(process.env.PORT || 3030, () => {
   console.log("server is up and running");
 });
 app.get("/", (req, res) => {
