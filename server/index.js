@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const request = require("request-promise");
 const { html } = require("cheerio");
-app.listen(3000, () => {
+app.listen(process.env.port || 3000, () => {
   console.log("server is up and running");
 });
 app.get("/", (req, res) => {
