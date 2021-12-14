@@ -16,8 +16,7 @@ app.post("/urls", jsonParser, (req, res) => {
   const body = req.body;
   console.log(body);
   var query = body["query"];
-  query = query.trim().replaceAll("", "+");
-
+  query = query.trim().replace("/: :/g ", "+");
   var data;
   request({
     uri:
